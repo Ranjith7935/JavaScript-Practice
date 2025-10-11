@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FakeStore Products</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🛒 FakeStore Product Grid</h1>
+  <div class="container" id="product-container"></div>
+
+  <script>
+    const container = document.getElementById("product-container");
+
+    // Fetch from FakeStore API
+    fetch("https://fakestoreapi.com/products")
+      .then(res => res.json())
+      .then(products => {
+        container.innerHTML = products.map(product => `
+          <div class="card">
+            <img src="${product.image}" alt="${product.title}" />
+            <div class="card-body">
+              <h3>${product.title}</h3>
+              <p class="price">$${product.price}</p>
+              <p class="desc">${product.description.slice(0, 80)}...</p>
+              <button>Add to Cart</button>
+            </div>
+          </div>
+        `).join('');
+      });
+  </script>
+</body>
+</html>

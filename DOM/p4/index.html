@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <!-- Generate a Table Row and Append to the Body
+ Create a <table> element with a single row (<tr>) and three cells (<td>), each containing some text. Append the <table> to the <body>. -->
+    <script>
+        let table=document.createElement("table")
+        let tr=document.createElement("tr")
+        for (let i = 1; i <=3; i++) {
+      let td = document.createElement("td");
+      td.innerText =  i; 
+      tr.appendChild(td);
+    }
+        
+
+        table.appendChild(tr)
+        document.body.appendChild(table)
+        console.log(table)
+        
+    </script>
+</body>
+</html>

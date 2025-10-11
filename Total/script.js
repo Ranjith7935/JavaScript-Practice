@@ -1,12 +1,12 @@
 // 1
-// const URL="https://dummyjson.com/todo"
-// fetch(URL).then(res=>res.json())
-// .then(data=>{
-//     for(let i=0;i<data.todos.length;i++){
-//         console.log(data.todos[i].userId);
-// }}).catch(r=>console.log("not correct")
-// );
-
+const URL="https://dummyjson.com/todo"
+fetch(URL).then(res=>res.json())
+.then(data=>{
+    for(let i=0;i<data.todos.length;i++){
+        console.log(data.todos[i].userId);
+}}).catch(r=>console.log("not correct")
+);
+ 
 
 // 2
 // fetch("https://dummyjson.com/quotes")
@@ -37,9 +37,9 @@
 
 
 // 5
-fetch("https://pokeapi.co/api/v2/pokemon/ditto")
-.then(res=>res.json())
-.then(data=>console.log(data.abilities[0].ability.name));
+// fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+// .then(res=>res.json())
+// .then(data=>console.log(data.abilities[0].ability.name));
 
 
 

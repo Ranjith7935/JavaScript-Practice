@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Add Multiple Buttons and Append to the Body
+ Create a <div> and append five <button> elements to it, each with unique text for the button label. Append the <div> to the <body> -->
+<script>
+    let div=document.createElement("div")
+    for(let i=1;i<=5;i++){
+        let button=document.createElement("button")
+        button.innerText=i
+        div.appendChild(button)
+
+    }
+    document.body.appendChild(div)
+    console.log(div);
+    
+</script>
+</body>
+    
+</html>

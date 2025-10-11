@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <!-- Build a Nested Structure and Append to the Body
+ Create a <div> containing a <h1> heading and a <p> paragraph, both with distinct text. Append the <div> to the <body>. -->
+
+    <script>
+        let div=document.createElement("div")
+        let h1=document.createElement("h1")
+        let p=document.createElement("p")
+        h1.innerText="h1 tag"
+        p.innerText="p tag"
+       
+        div.appendChild(h1)
+        div.appendChild(p)
+        
+        document.body.appendChild(div)
+        console.log(div);
+        
+
+    </script>
+</body>
+</html>

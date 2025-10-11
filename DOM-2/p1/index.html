@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Task 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f4f9;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<!-- Fake Dataset:
+let products = [
+{ id: 201, name: "Smartphone", price: 699, category: "Electronics", stock: 50, rating: 4.6 },
+{ id: 202, name: "Blender", price: 49, category: "Appliances", stock: 20, rating: 4.3 },
+{ id: 203, name: "Yoga Mat", price: 25, category: "Fitness", stock: 100, rating: 4.9 },
+{ id: 204, name: "Office Desk", price: 299, category: "Furniture", stock: 10, rating: 4.2 },
+{ id: 205, name: "Bluetooth Speaker", price: 79, category: "Electronics", stock: 60, rating: 4.7 }
+];
+Question:
+Display the products dynamically as cards on a webpage, with each card showing the product’s name, price, category, rating, and a “Buy Now” button. Ensure the layout is responsive and visually appealing. -->
+    <h2>Product Store</h2>
+  <div class="container" id="productContainer"></div>
+    <script>
+        const container = document.getElementById("productContainer");
+        let products = [
+{ id: 201, name: "Smartphone", price: 699, category: "Electronics", stock: 50, rating: 4.6 },
+{ id: 202, name: "Blender", price: 49, category: "Appliances", stock: 20, rating: 4.3 },
+{ id: 203, name: "Yoga Mat", price: 25, category: "Fitness", stock: 100, rating: 4.9 },
+{ id: 204, name: "Office Desk", price: 299, category: "Furniture", stock: 10, rating: 4.2 },
+{ id: 205, name: "Bluetooth Speaker", price: 79, category: "Electronics", stock: 60, rating: 4.7 }
+
+];
+
+let div=document.createElement("div")
+products.forEach(p => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <h3>${p.name}</h3>
+        <p>Price: $${p.price}</p>
+        <p>Category: ${p.category}</p>
+        <p>Rating: ⭐ ${p.rating}</p>
+        <button class="btn">Buy Now</button>
+      `;
+      container.appendChild(card);
+    });
+
+    </script>
+</body>
+</html>
