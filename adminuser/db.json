@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "virat",
+      "image": "https://i.pinimg.com/originals/de/8e/ea/de8eea6f67a5fc92996ff6d48b3bd690.jpg"
+    },
+    {
+      "id": "2",
+      "name": "rohith",
+      "image": "https://thvnext.bing.com/th/id/OIP.Yn-IJbQ4tlfa0l-rov-r9QHaE8?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "3",
+      "name": "dhoni",
+      "image": "https://tse2.mm.bing.net/th/id/OIP.cMeeIn5N56iDQmPUNCUEbgHaJ3?cb=12&w=2003&h=2670&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "f730",
+      "name": "Gill",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Shubman_Gill_2023_%28cropped%29.jpg"
+    }
+  ]
+}

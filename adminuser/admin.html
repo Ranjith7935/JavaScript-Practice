@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f766e;
+      --secondary: #0284c7;
+      --danger: #dc2626;
+      --success: #16a34a;
+      --neutral: #6b7280;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background: var(--card);
+      max-width: 450px;
+      margin: 0 auto 40px;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    form input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 5px rgba(15, 118, 110, 0.4);
+      outline: none;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: var(--success);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #15803d;
+    }
+
+    #container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: 0 4px 12px var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      transition: all 0.3s ease;
+      padding-bottom: 10px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(15, 118, 110, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 12px 0;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-group button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .edit {
+      background: var(--secondary);
+    }
+
+    .delete {
+      background: var(--danger);
+    }
+
+    .edit:hover {
+      background: #0369a1;
+    }
+
+    .delete:hover {
+      background: #b91c1c;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Admin Panel - Manage Players</h1>
+
+  <!-- ADD / UPDATE FORM -->
+  <form id="productForm">
+    <input type="hidden" id="productId" />
+    <input type="text" id="name" placeholder="Enter name" required />
+    <input type="text" id="image" placeholder="Enter image URL" required />
+    <button type="submit">Add Product</button>
+  </form>
+
+  <div id="container"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
