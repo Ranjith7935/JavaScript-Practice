@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check Book Images</title>
+</head>
+<body>
+  <h1>Book Image Checker</h1>
+  <pre id="output"></pre>
+
+  <script>
+    const API_URL = 'http://localhost:8080/api/books';
+    const output = document.getElementById('output');
+
+    // Check if an image URL works by loading it
+    function isImageValid(url) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(true);   // image loaded successfully
+        img.onerror = () => resolve(false); // image failed
+        img.src = url;
+      });
+    }
+
+    async function checkBooks() {
+      try {
+        // 1️⃣ Fetch all books from your API
+        const res = await fetch(API_URL);
+        const books = await res.json();
+
+        const validBooks = [];
+
+        // 2️⃣ Loop through each book
+        for (const book of books) {
+          const valid = await isImageValid(book.imageUrl);
+          output.textContent += `ID: ${book.id}, Title: ${book.title}\n`;
+          output.textContent += `Image URL: ${book.imageUrl} => ${valid ? 'OK' : 'BAD'}\n\n`;
+
+          if (valid) validBooks.push(book);
+        }
+
+        // 3️⃣ Optionally, show valid books count
+        output.textContent += `\n✅ Total valid books: ${validBooks.length}`;
+
+      } catch (err) {
+        output.textContent = 'Error fetching books: ' + err;
+      }
+    }
+
+    checkBooks();
+  </script>
+</body>
+</html>
